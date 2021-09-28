@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:techotron/terraform-modules.git//modules/vpc/?ref=v0.0.1"
+  source = "git::git@github.com:techotron/terraform-modules.git//modules/vpc/?ref=main"
 }
 
 

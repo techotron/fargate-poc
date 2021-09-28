@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:techotron/terraform-modules.git//modules/alb"
+  source = "git::git@github.com:techotron/terraform-modules.git//modules/alb/?ref=main"
 }
 
 dependency "vpc" {
