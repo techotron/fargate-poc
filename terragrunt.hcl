@@ -10,7 +10,7 @@ remote_state {
     region         = "eu-west-2"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     dynamodb_table = "terraform-locks"
-    profile        = "snowco"
+    profile         = "snowco"
   }
 }
 
