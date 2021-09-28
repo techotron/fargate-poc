@@ -1,13 +1,14 @@
 terraform {
-  source = "git::git@github.com:techotron/terraform-modules.git//modules/vpc/?ref=v0.0.1"
+  source = "git::git@github.com:techotron/terraform-modules.git//modules/vpc/?ref=main"
 }
 
 
 locals {
   environment = read_terragrunt_config(find_in_parent_folders("environment.hcl"))
   region      = read_terragrunt_config(find_in_parent_folders("region.hcl"))
-  vpc_vars    = read_terragrunt_config(find_in_parent_folders("vpc_vars.hcl"))
-  inputs      = merge(local.environment.locals, local.vpc_vars.locals, local.region.locals)
+  vars_vpc    = read_terragrunt_config(find_in_parent_folders("vars_vpc.hcl"))
+  vars_common    = read_terragrunt_config(find_in_parent_folders("vars_common.hcl"))
+  inputs      = merge(local.environment.locals, local.vars_vpc.locals, local.region.locals, local.vars_common.locals)
 }
 
 include {
