@@ -26,3 +26,4 @@ terraform.rc
 # Terragrunt
 backend.tf
 versions.tf
+**/.terragrunt-cache/*
